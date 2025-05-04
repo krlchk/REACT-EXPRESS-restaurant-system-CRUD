@@ -1,0 +1,54 @@
+{"level":"info","message":"New user registered: User@gmail.com","timestamp":"2025-05-04 16:27:28"}
+{"level":"info","message":"New user registered: user@gmail.com","timestamp":"2025-05-04 16:28:30"}
+{"level":"error","message":"Error in createUser: data and salt arguments required","stack":"Error: data and salt arguments required\n    at Object.hash (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\bcrypt\\bcrypt.js:137:17)\n    at D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\bcrypt\\promises.js:29:12\n    at new Promise (<anonymous>)\n    at Object.module.exports.promise (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\bcrypt\\promises.js:20:12)\n    at Object.hash (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\bcrypt\\bcrypt.js:133:25)\n    at createUserService (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\src\\models\\user-model.ts:9:39)\n    at createUser (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\src\\controllers\\user-controller.ts:15:41)\n    at Layer.handleRequest (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\node_modules\\router\\lib\\route.js:117:3)","timestamp":"2025-05-04 16:29:59"}
+{"level":"info","message":"User deleted successfully","timestamp":"2025-05-04 16:35:56"}
+{"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 16:37:20"}
+{"level":"info","message":"User fetched successfully","timestamp":"2025-05-04 16:37:24"}
+{"level":"info","message":"The user already exists: user@gmail.com","timestamp":"2025-05-04 16:44:19"}
+{"level":"info","message":"The user already exists: user@gmail.com","timestamp":"2025-05-04 16:44:43"}
+{"level":"info","message":"Problems with your password","timestamp":"2025-05-04 16:44:50"}
+{"level":"info","message":"User fetched successfully","timestamp":"2025-05-04 16:50:40"}
+{"level":"info","message":"Can not find user with this email","timestamp":"2025-05-04 16:55:33"}
+{"level":"error","message":"Error in loginUser: Cannot read properties of undefined (reading 'password')","stack":"TypeError: Cannot read properties of undefined (reading 'password')\n    at loginUser (D:\\projects\\practice\\REACT-EXPRESS-restaurant-system-CRUD\\backend\\src\\controllers\\user-controller.ts:48:62)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-05-04 16:55:41"}
+{"level":"info","message":"User fetched successfully","timestamp":"2025-05-04 16:56:31"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:33"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:43"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:48"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:49"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:54"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:55"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:55"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:58:56"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:59:29"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:59:32"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:59:33"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:59:34"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 16:59:37"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:00:32"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:00:34"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:00:37"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:00:38"}
+{"level":"info","message":"New user registered: user2@gmail.com","timestamp":"2025-05-04 17:01:26"}
+{"level":"info","message":"User is logged in: user2@gmail.com","timestamp":"2025-05-04 17:01:38"}
+{"level":"info","message":"The credentials are invalid","timestamp":"2025-05-04 17:04:06"}
+{"level":"info","message":"User is logged in: user2@gmail.com","timestamp":"2025-05-04 17:04:12"}
+{"level":"info","message":"The credentials are invalid","timestamp":"2025-05-04 17:04:15"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:04:21"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:38:56"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:41:11"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:42:52"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:42:53"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:42:54"}
+{"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 17:47:01"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:48:20"}
+{"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 17:48:28"}
+{"level":"info","message":"User fetched successfully","timestamp":"2025-05-04 17:48:33"}
+{"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 17:49:02"}
+{"level":"info","message":"User deleted successfully","timestamp":"2025-05-04 17:49:55"}
+{"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 17:50:03"}
+{"level":"info","message":"Can not find user with this email","timestamp":"2025-05-04 17:58:52"}
+{"level":"info","message":"The credentials are invalid","timestamp":"2025-05-04 17:59:05"}
+{"level":"info","message":"New user registered: user@gmail.com","timestamp":"2025-05-04 17:59:15"}
+{"level":"info","message":"The credentials are invalid","timestamp":"2025-05-04 17:59:20"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:59:26"}
+{"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 17:59:38"}
