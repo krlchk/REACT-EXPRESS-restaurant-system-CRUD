@@ -1,8 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IUserState } from "./user-types";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {
+  ILoginResponse,
+  IRegisterResponse,
+  IUser,
+  IUserState,
+} from "./user-types";
+import axios from "axios";
+
+export const registerUser = createAsyncThunk<
+  IUser,
+  { name: string; email: string; password: string }
+>("register/registerUser", async ({ name, email, password }) => {
+  const response = await axios.post<IRegisterResponse>(
+    "http://localhost:5001/api/register-user",
+    { name, email, password },
+    {
+      headers: { "Content-Type": "application/json" },
+    },
+  );
+  return response.data.user;
+});
+
+export const loginUser = createAsyncThunk<
+  string,
+  { email: string; password: string }
+>("login/loginUser", async ({ email, password }) => {
+  const response = await axios.post<ILoginResponse>(
+    "http://localhost:5001/api/login-user",
+    { email, password },
+    {
+      headers: { "Content-Type": "application/json" },
+    },
+  );
+  return response.data.data.token;
+});
 
 const initialState: IUserState = {
   user: null,
+  token: null,
   status: "idle",
   error: null as string | null,
 };
@@ -10,8 +45,39 @@ const initialState: IUserState = {
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    resetStatus(state) {
+      state.status = "idle";
+      state.error = null;
+    },
+  },
+  //REGISTER
+  extraReducers: (builder) => {
+    builder.addCase(registerUser.pending, (state) => {
+      state.status = "loading";
+    });
+    builder.addCase(registerUser.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.user = action.payload;
+    });
+    builder.addCase(registerUser.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.error?.message || "Failed to register";
+    });
+    //LOGIN
+    builder.addCase(loginUser.pending, (state) => {
+      state.status = "loading";
+    });
+    builder.addCase(loginUser.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.token = action.payload;
+    });
+    builder.addCase(loginUser.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.error?.message || "Failed to register";
+    });
+  },
 });
 
-export const {} = userSlice.actions;
+export const { resetStatus } = userSlice.actions;
 export default userSlice.reducer;
