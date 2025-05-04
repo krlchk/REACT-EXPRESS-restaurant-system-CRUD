@@ -52,3 +52,11 @@
 {"level":"info","message":"The credentials are invalid","timestamp":"2025-05-04 17:59:20"}
 {"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 17:59:26"}
 {"level":"info","message":"Users fetched successfully","timestamp":"2025-05-04 17:59:38"}
+{"level":"info","message":"User is logged in: user@gmail.com","timestamp":"2025-05-04 18:41:48"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-04 18:42:41"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-04 18:43:01"}
+{"level":"info","message":"New user registered: krrevunov@gmail.com","timestamp":"2025-05-04 19:13:25"}
+{"level":"info","message":"New user registered: test@gmail.com","timestamp":"2025-05-04 19:16:59"}
+{"level":"info","message":"New user registered: usertest2@gmail.com","timestamp":"2025-05-04 19:20:19"}
+{"level":"info","message":"New user registered: test3@gmail.com","timestamp":"2025-05-04 19:21:02"}
+{"level":"info","message":"User is logged in: krrevunov@gmail.com","timestamp":"2025-05-04 19:51:25"}

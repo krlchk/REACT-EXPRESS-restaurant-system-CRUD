@@ -4,6 +4,7 @@ import express from "express";
 import cors from "cors";
 import pool from "./config/db";
 import userRoutes from "./routes/user-router";
+import dishesRoutes from "./routes/dishes-routes";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api", userRoutes);
+app.use("/api", dishesRoutes);
 
 app.get("/", async (req: Request, res: Response) => {
   try {
