@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
+  addToCart,
   deleteDish,
   fetchDishes,
 } from "../../components/store/dishes/dish-slice";
+import { useNavigate } from "react-router-dom";
 
 interface IMenuItem {
   id: number;
@@ -15,13 +17,30 @@ interface IMenuItem {
 export const MenuItem = ({ id, name, description, price }: IMenuItem) => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.restaurant.users);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
+  const navigate = useNavigate();
 
   const handleClick = async () => {
     const resultThunk = await dispatch(deleteDish({ id }));
     if (deleteDish.fulfilled.match(resultThunk)) {
       dispatch(fetchDishes());
     }
+  };
+
+  const handleAddToCatr = () => {
+    dispatch(
+      addToCart({
+        amount: amount,
+        dish: {
+          id: id,
+          name: name,
+          description: description,
+          price: price,
+        },
+      }),
+    );
+    setAmount(1);
+    navigate("/cart");
   };
 
   return (
@@ -33,22 +52,25 @@ export const MenuItem = ({ id, name, description, price }: IMenuItem) => {
         <div>
           <div className="flex items-center justify-center gap-3">
             <button
-              onClick={() => setAmount((lastAmount) => lastAmount + 1)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-black bg-slate-200 font-bold transition-colors hover:bg-slate-300"
-            >
-              +
-            </button>
-            <p className="text-xl">{amount}</p>
-            <button
               onClick={() => {
-                if (amount >= 1) setAmount((lastAmount) => lastAmount - 1);
+                if (amount >= 2) setAmount((lastAmount) => lastAmount - 1);
               }}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-black bg-slate-200 font-bold transition-colors hover:bg-slate-300"
             >
               -
             </button>
+            <p className="text-xl">{amount}</p>
+            <button
+              onClick={() => setAmount((lastAmount) => lastAmount + 1)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-black bg-slate-200 font-bold transition-colors hover:bg-slate-300"
+            >
+              +
+            </button>
           </div>
-          <button className="mt-2 w-full border border-black bg-slate-200 p-2 transition-colors hover:bg-slate-300">
+          <button
+            onClick={handleAddToCatr}
+            className="mt-2 w-full border border-black bg-slate-200 p-2 transition-colors hover:bg-slate-300"
+          >
             Add to cart
           </button>
         </div>

@@ -4,6 +4,7 @@ import { fetchDishes } from "../components/store/dishes/dish-slice";
 import { MenuItem } from "./menu-page-components/menu-item";
 import { ModalWindow } from "./menu-page-components/modal-window";
 import { openModal } from "../components/store/ui/ui-slice";
+import { Link } from "react-router-dom";
 
 export const MenuPage = () => {
   const dispatch = useAppDispatch();
@@ -32,6 +33,21 @@ export const MenuPage = () => {
   return (
     <div className="mx-auto flex h-auto w-2/3 flex-col justify-center gap-5 p-5">
       <div className="mb-10 text-center text-4xl">Our menu</div>
+      <div className="flex gap-5">
+        <Link
+          className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+          to="/"
+        >
+          to Home
+        </Link>
+        <Link
+          className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+          to="/cart"
+        >
+          to Cart
+        </Link>
+      </div>
+
       {user?.role === "admin" ? (
         <button
           onClick={() => dispatch(openModal())}

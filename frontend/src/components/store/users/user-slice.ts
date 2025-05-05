@@ -47,10 +47,7 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    logout(state) {
-      state.user = null;
-      state.token = null;
-    },
+    setUserReset: () => initialState,
     resetStatus(state) {
       state.status = "idle";
       state.error = null;
@@ -86,5 +83,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { resetStatus, logout } = userSlice.actions;
+export const { resetStatus, setUserReset } = userSlice.actions;
 export default userSlice.reducer;

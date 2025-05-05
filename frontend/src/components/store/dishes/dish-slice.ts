@@ -72,6 +72,7 @@ export const deleteDish = createAsyncThunk<
 const initialState: IDishesState = {
   dishes: [],
   orders: [],
+  cartDishes: [],
   status: "idle",
   error: null as string | null,
 };
@@ -79,7 +80,29 @@ const initialState: IDishesState = {
 export const dishesSlice = createSlice({
   name: "dishes",
   initialState,
-  reducers: {},
+  reducers: {
+    setDishesReset: () => initialState,
+    addToCart(state, action) {
+      const existingDish = state.cartDishes.find(
+        (dish) => dish.dish.id === action.payload.dish.id,
+      );
+      if (existingDish) {
+        existingDish.amount += action.payload.amount;
+      } else {
+        state.cartDishes.push(action.payload);
+      }
+    },
+    setNewAmount(state, action) {
+      const { id, amount } = action.payload;
+      const needDish = state.cartDishes.find((dish) => dish.dish.id === id);
+      if (needDish) {
+        needDish.amount = amount;
+      }
+    },
+    removeFromCart(state, action) {
+      state.cartDishes = state.cartDishes.filter((dish) => dish.dish.id !== action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchDishes.pending, (state) => {
       state.status = "loading";
@@ -95,5 +118,6 @@ export const dishesSlice = createSlice({
   },
 });
 
-export const {} = dishesSlice.actions;
+export const { addToCart, setDishesReset, setNewAmount, removeFromCart } =
+  dishesSlice.actions;
 export default dishesSlice.reducer;

@@ -1,8 +1,14 @@
 export interface IDishesState {
   dishes: IDish[];
+  cartDishes: CartDish[];
   orders: IOrder[];
   status: string;
   error: string | null;
+}
+
+export interface CartDish {
+  amount: number;
+  dish: IDish;
 }
 
 export interface IDish {
@@ -22,7 +28,7 @@ export interface ICreateDishResponse {
   message: string;
   data: IDish;
 }
-export interface IDeleteDishResponse{
+export interface IDeleteDishResponse {
   status: number;
   message: string;
   data: IDish;

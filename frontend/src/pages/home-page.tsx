@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { logout } from "../components/store/users/user-slice";
+import { setUserReset } from "../components/store/users/user-slice";
+import { setDishesReset } from "../components/store/dishes/dish-slice";
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -17,18 +18,29 @@ export const HomePage = () => {
       <p className="text-3xl">
         Your role is: <span className="font-bold">{user?.role}</span>
       </p>
-      <button
-        onClick={() => dispatch(logout())}
-        className="mt-2 flex w-28 items-center justify-center rounded-md border bg-red-500 p-2 font-semibold text-white transition-colors hover:bg-red-700"
-      >
-        Logout
-      </button>
-      <Link
-        className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
-        to="menu"
-      >
-        to Menu
-      </Link>
+      <div className="flex gap-5">
+        <button
+          onClick={() => {
+            dispatch(setUserReset());
+            dispatch(setDishesReset());
+          }}
+          className="flex w-28 items-center justify-center rounded-md bg-red-400 p-2 transition-colors hover:bg-red-800 hover:text-white"
+        >
+          Logout
+        </button>
+        <Link
+          className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+          to="/menu"
+        >
+          to Menu
+        </Link>
+        <Link
+          className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+          to="/cart"
+        >
+          to Cart
+        </Link>
+      </div>
     </div>
   );
 };
