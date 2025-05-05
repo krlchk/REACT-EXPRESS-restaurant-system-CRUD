@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   ILoginResponse,
+  ILoginResponseData,
   IRegisterResponse,
   IUser,
   IUserState,
@@ -22,7 +23,7 @@ export const registerUser = createAsyncThunk<
 });
 
 export const loginUser = createAsyncThunk<
-  string,
+  ILoginResponseData,
   { email: string; password: string }
 >("login/loginUser", async ({ email, password }) => {
   const response = await axios.post<ILoginResponse>(
@@ -32,7 +33,7 @@ export const loginUser = createAsyncThunk<
       headers: { "Content-Type": "application/json" },
     },
   );
-  return response.data.data.token;
+  return response.data.data;
 });
 
 const initialState: IUserState = {
@@ -46,6 +47,13 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    setUser(state, action) {
+      state.user = action.payload;
+    },
+    resetUser(state) {
+      state.user = null;
+      state.token = null;
+    },
     resetStatus(state) {
       state.status = "idle";
       state.error = null;
@@ -70,7 +78,9 @@ export const userSlice = createSlice({
     });
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.token = action.payload;
+      state.token = action.payload.token;
+      state.user = action.payload.user;
+      //localStorage.setItem("token", action.payload.token);
     });
     builder.addCase(loginUser.rejected, (state, action) => {
       state.status = "failed";
@@ -79,5 +89,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { resetStatus } = userSlice.actions;
+export const { resetStatus, setUser, resetUser } = userSlice.actions;
 export default userSlice.reducer;

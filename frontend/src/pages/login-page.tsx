@@ -16,7 +16,7 @@ export const LoginPage = () => {
       const timer = setTimeout(() => {
         dispatch(resetStatus());
         navigate("/");
-      }, 3000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [dispatch, navigate, status]);

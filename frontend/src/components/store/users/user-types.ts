@@ -24,5 +24,11 @@ export interface ILoginResponse {
   message: string;
   data: {
     token: string;
+    user: IUser;
   };
+}
+
+export interface ILoginResponseData {
+  token: string;
+  user: IUser;
 }
