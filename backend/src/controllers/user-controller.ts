@@ -55,7 +55,7 @@ export const loginUser = async (req: Request, res: Response) => {
     const token = generateToken({ id: user.id, role: user.role });
 
     logger.info(`User is logged in: ${email}`);
-    handleResponse(res, 201, "User logged in successfully", { token });
+    handleResponse(res, 201, "User logged in successfully", {user, token});
   } catch (err) {
     logger.error("Error in loginUser:", err);
     errorHandling(err, res);
