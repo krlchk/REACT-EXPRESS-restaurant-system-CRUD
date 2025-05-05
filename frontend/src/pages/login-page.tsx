@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { useEffect, useState } from "react";
 import { loginUser, resetStatus } from "../components/store/users/user-slice";
@@ -63,6 +63,13 @@ export const LoginPage = () => {
         >
           {status === "loading" ? "Loginning..." : "Login"}
         </button>
+        <Link
+          to="/register"
+          className="mt-7 flex w-full items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+          type="submit"
+        >
+          to Register page
+        </Link>
       </form>
     </div>
   );
