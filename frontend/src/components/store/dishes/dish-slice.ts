@@ -1,10 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
+  ICartDish,
   ICreateDishResponse,
+  ICreateOrderResponse,
   IDeleteDishResponse,
   IDish,
   IDishesState,
+  IOrder,
   IResponseForDish,
+  IResponseForOrder,
 } from "./dish-types";
 import axios from "axios";
 import { RootState } from "../../../app/store";
@@ -18,6 +22,24 @@ export const fetchDishes = createAsyncThunk<
   const token = state.restaurant.users.token;
   const response = await axios.get<IResponseForDish>(
     "http://localhost:5001/api/dishes",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+  return response.data.data;
+});
+
+export const fetchOrders = createAsyncThunk<
+  IOrder[],
+  void,
+  { state: RootState }
+>("orders/fetchOrders", async (_, thunkAPI) => {
+  const state = thunkAPI.getState();
+  const token = state.restaurant.users.token;
+  const response = await axios.get<IResponseForOrder>(
+    "http://localhost:5001/api/orders",
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -50,6 +72,39 @@ export const createDish = createAsyncThunk<
   );
   return response.data.data;
 });
+
+export const createOrder = createAsyncThunk<
+  IOrder,
+  {
+    user_id: number | undefined;
+    status: "pending" | "failed" | "completed";
+    dishes: ICartDish[];
+    total_price: number;
+  },
+  { state: RootState }
+>(
+  "orders/createOrder",
+  async ({ user_id, status, dishes, total_price }, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.restaurant.users.token;
+    const response = await axios.post<ICreateOrderResponse>(
+      "http://localhost:5001/api/create-order",
+      {
+        user_id,
+        status,
+        dishes,
+        total_price,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+    return response.data.data;
+  },
+);
 
 export const deleteDish = createAsyncThunk<
   IDish,
@@ -100,10 +155,16 @@ export const dishesSlice = createSlice({
       }
     },
     removeFromCart(state, action) {
-      state.cartDishes = state.cartDishes.filter((dish) => dish.dish.id !== action.payload);
+      state.cartDishes = state.cartDishes.filter(
+        (dish) => dish.dish.id !== action.payload,
+      );
+    },
+    resetCart(state) {
+      state.cartDishes = [];
     },
   },
   extraReducers: (builder) => {
+    //FETCH DISHES
     builder.addCase(fetchDishes.pending, (state) => {
       state.status = "loading";
     });
@@ -115,9 +176,26 @@ export const dishesSlice = createSlice({
       state.status = "failed";
       state.error = action.error?.message || "Failed to fetch";
     });
+    //FETCH ORDERS
+    builder.addCase(fetchOrders.pending, (state) => {
+      state.status = "loading";
+    });
+    builder.addCase(fetchOrders.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.orders = action.payload;
+    });
+    builder.addCase(fetchOrders.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.error?.message || "Failed to fetch";
+    });
   },
 });
 
-export const { addToCart, setDishesReset, setNewAmount, removeFromCart } =
-  dishesSlice.actions;
+export const {
+  addToCart,
+  setDishesReset,
+  setNewAmount,
+  removeFromCart,
+  resetCart,
+} = dishesSlice.actions;
 export default dishesSlice.reducer;

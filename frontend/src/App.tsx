@@ -1,7 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, LoginPage, MenuPage, RegisterPage } from "./pages";
+import {
+  CartPage,
+  HomePage,
+  LoginPage,
+  MenuPage,
+  OrdersPage,
+  RegisterPage,
+} from "./pages";
 import { ProtectedRoute } from "./components/utils/protected-route";
-import { CartPage } from "./pages/cart-page";
 
 const App = () => {
   return (
@@ -30,6 +36,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <CartPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <OrdersPage />
             </ProtectedRoute>
           }
         />

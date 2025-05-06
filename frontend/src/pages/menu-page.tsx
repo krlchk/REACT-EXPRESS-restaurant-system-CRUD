@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { fetchDishes } from "../components/store/dishes/dish-slice";
-import { MenuItem } from "./menu-page-components/menu-item";
-import { ModalWindow } from "./menu-page-components/modal-window";
 import { openModal } from "../components/store/ui/ui-slice";
 import { Link } from "react-router-dom";
+import { MenuItem, ModalWindow } from "./menu-page-components";
 
 export const MenuPage = () => {
   const dispatch = useAppDispatch();
@@ -40,12 +39,21 @@ export const MenuPage = () => {
         >
           to Home
         </Link>
-        <Link
-          className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
-          to="/cart"
-        >
-          to Cart
-        </Link>
+        {user?.role === "admin" ? (
+          <Link
+            className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+            to="/orders"
+          >
+            to Orders
+          </Link>
+        ) : (
+          <Link
+            className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+            to="/cart"
+          >
+            to Cart
+          </Link>
+        )}
       </div>
 
       {user?.role === "admin" ? (

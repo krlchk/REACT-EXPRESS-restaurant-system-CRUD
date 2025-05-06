@@ -45,7 +45,7 @@ export const MenuItem = ({ id, name, description, price }: IMenuItem) => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 border border-black p-3">
-      <h1 className="text-xl font-bold">{name}</h1>
+      <h1 className="text-xl text-center font-bold">{name}</h1>
       <p className="text-center text-lg">{description}</p>
       <p className="text-lg font-bold text-green-700">{price} $</p>
       {user?.role === "customer" ? (

@@ -34,12 +34,21 @@ export const HomePage = () => {
         >
           to Menu
         </Link>
-        <Link
-          className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
-          to="/cart"
-        >
-          to Cart
-        </Link>
+        {user?.role === "admin" ? (
+          <Link
+            className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+            to="/orders"
+          >
+            to Orders
+          </Link>
+        ) : (
+          <Link
+            className="flex w-28 items-center justify-center rounded-md bg-gray-300 p-2 transition-colors hover:bg-gray-500 hover:text-white"
+            to="/cart"
+          >
+            to Cart
+          </Link>
+        )}
       </div>
     </div>
   );
