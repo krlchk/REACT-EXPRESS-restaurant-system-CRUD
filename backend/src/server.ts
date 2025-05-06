@@ -5,6 +5,7 @@ import cors from "cors";
 import pool from "./config/db";
 import userRoutes from "./routes/user-router";
 import dishesRoutes from "./routes/dishes-routes";
+import ordersRoutes from "./routes/orders-route";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.use("/api", userRoutes);
 app.use("/api", dishesRoutes);
+app.use("/api", ordersRoutes);
 
 app.get("/", async (req: Request, res: Response) => {
   try {

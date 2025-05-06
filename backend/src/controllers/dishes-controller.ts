@@ -18,7 +18,7 @@ export const createDish = async (req: Request, res: Response) => {
     logger.info(`New dish created: ${name}`);
     handleResponse(res, 201, "Dish created successfully", dish);
   } catch (err) {
-    logger.error("Error in createUser:", err);
+    logger.error("Error in createDish:", err);
     errorHandling(err, res);
   }
 };
