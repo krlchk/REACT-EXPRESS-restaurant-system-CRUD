@@ -3,12 +3,14 @@ import {
   ICartDish,
   ICreateDishResponse,
   ICreateOrderResponse,
+  IDeleteCartResponse,
   IDeleteDishResponse,
   IDish,
   IDishesState,
   IOrder,
   IResponseForDish,
   IResponseForOrder,
+  IUpdateCartResponse,
 } from "./dish-types";
 import axios from "axios";
 import { RootState } from "../../../app/store";
@@ -117,6 +119,46 @@ export const deleteDish = createAsyncThunk<
     `http://localhost:5001/api/delete-dish/${id}`,
     {
       headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+  return response.data.data;
+});
+
+export const removeOrder = createAsyncThunk<
+  IOrder,
+  { id: number },
+  { state: RootState }
+>("orders/deleteOrder", async ({ id }, thunkAPI) => {
+  const state = thunkAPI.getState();
+  const token = state.restaurant.users.token;
+  const response = await axios.delete<IDeleteCartResponse>(
+    `http://localhost:5001/api/delete-order/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+  return response.data.data;
+});
+
+export const updateOrderStatus = createAsyncThunk<
+  IOrder,
+  { id: number; status: string },
+  { state: RootState }
+>("orders/updateOrder", async ({ id, status }, thunkAPI) => {
+  const state = thunkAPI.getState();
+  const token = state.restaurant.users.token;
+  const response = await axios.put<IUpdateCartResponse>(
+    `http://localhost:5001/api/update-order/${id}`,
+    {
+      status,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     },

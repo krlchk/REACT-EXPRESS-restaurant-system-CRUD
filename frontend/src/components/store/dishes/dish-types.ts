@@ -38,6 +38,16 @@ export interface IDeleteDishResponse {
   message: string;
   data: IDish;
 }
+export interface IDeleteCartResponse {
+  status: number;
+  message: string;
+  data: IOrder;
+}
+export interface IUpdateCartResponse {
+  status: number;
+  message: string;
+  data: IOrder;
+}
 
 export interface ICreateOrderResponse {
   status: number;
@@ -48,7 +58,7 @@ export interface ICreateOrderResponse {
 export interface IOrder {
   id: number;
   user_id: number;
-  status: "pending" | "failed" | "completed";
+  status: "pending" | "rejected" | "completed";
   dishes: IDish[];
   total_price: number;
 }
