@@ -1,7 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import pool from "../../config/db";
 import { createUserService } from "../../models/user-model";
-import bcrypt from "bcrypt";
 
 vi.mock("../../config/db", () => ({
   default: {

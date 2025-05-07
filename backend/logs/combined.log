@@ -12798,3 +12798,75 @@
 {"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 13:27:44"}
 {"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 13:27:46"}
 {"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 13:27:46"}
+{"level":"info","message":"User is logged in: krrevunov@gmail.com","timestamp":"2025-05-07 21:21:32"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:22:56"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:22:56"}
+{"level":"info","message":"New dish created: tetstesttesttbttbnyn","timestamp":"2025-05-07 21:23:39"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:23:39"}
+{"level":"info","message":"Dish deleted successfully","timestamp":"2025-05-07 21:24:36"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:24:36"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:25:21"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:25:21"}
+{"level":"info","message":"User is logged in: krrevunov2@gmail.com","timestamp":"2025-05-07 21:25:37"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:25:55"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:25:55"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:26:08"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:26:08"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:26:36"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:26:36"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:26:39"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:26:39"}
+{"level":"info","message":"New order created","timestamp":"2025-05-07 21:27:08"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:08"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:16"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:16"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:17"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:17"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:20"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:20"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:24"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:24"}
+{"level":"info","message":"User is logged in: testcart@gmail.com","timestamp":"2025-05-07 21:27:35"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:27:40"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:27:40"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:40"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:40"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:52"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:52"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:56"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:27:56"}
+{"level":"info","message":"New order created","timestamp":"2025-05-07 21:28:00"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:00"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:11"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:11"}
+{"level":"info","message":"New order created","timestamp":"2025-05-07 21:28:11"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:11"}
+{"level":"info","message":"User is logged in: krrevunov@gmail.com","timestamp":"2025-05-07 21:28:17"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:28:20"}
+{"level":"info","message":"Dishes fetched successfully","timestamp":"2025-05-07 21:28:20"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:22"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:22"}
+{"level":"info","message":"Order updated","timestamp":"2025-05-07 21:28:50"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:50"}
+{"level":"info","message":"Order updated","timestamp":"2025-05-07 21:28:53"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:53"}
+{"level":"info","message":"Order updated","timestamp":"2025-05-07 21:28:55"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:55"}
+{"level":"info","message":"Order updated","timestamp":"2025-05-07 21:28:56"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:56"}
+{"level":"info","message":"Order updated","timestamp":"2025-05-07 21:28:58"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:58"}
+{"level":"info","message":"Order updated","timestamp":"2025-05-07 21:28:59"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:28:59"}
+{"level":"info","message":"Order deleted successfully","timestamp":"2025-05-07 21:29:06"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:29:06"}
+{"level":"info","message":"User is logged in: testcart@gmail.com","timestamp":"2025-05-07 21:29:15"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:29:18"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:29:18"}
+{"level":"info","message":"Order deleted successfully","timestamp":"2025-05-07 21:29:37"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:29:37"}
+{"level":"info","message":"User is logged in: krrevunov2@gmail.com","timestamp":"2025-05-07 21:29:58"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:30:01"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:30:01"}
+{"level":"info","message":"Order deleted successfully","timestamp":"2025-05-07 21:30:04"}
+{"level":"info","message":"Orders fetched successfully","timestamp":"2025-05-07 21:30:04"}

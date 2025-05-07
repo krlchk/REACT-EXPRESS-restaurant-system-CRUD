@@ -19,7 +19,7 @@ app.use("/api", userRoutes);
 app.use("/api", dishesRoutes);
 app.use("/api", ordersRoutes);
 
-app.get("/", async (req: Request, res: Response) => {
+app.get("/", async (_req: Request, res: Response) => {
   try {
     const result = await pool.query("SELECT current_database()");
     console.log("Database name:", result.rows[0].current_database);

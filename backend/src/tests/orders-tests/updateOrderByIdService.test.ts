@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import pool from "../../config/db";
 import {
-  createOrderService,
   updateOrderByIdService,
 } from "../../models/order-model";
 
